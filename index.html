@@ -2,12 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <title>Goose</title>
+    <script
+      async
+      defer
+      data-do-not-track="true"
+      data-domains="goose.sthom.kiwi"
+      data-website-id="3e4d0c6c-e088-4f33-97ac-a122af1c2fe4"
+      src="https://analytics.sthom.kiwi/umami.js"
+    ></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body
+    class="flex min-h-screen flex-col bg-slate-200 align-middle font-sans text-neutral-800 dark:bg-slate-900 dark:text-neutral-300"
+  >
+    <audio class="audio-honk hidden" src="/audio/goose_honk_b_01.wav"></audio>
+    <audio class="audio-honk hidden" src="/audio/goose_honk_b_02.wav"></audio>
+    <audio class="audio-honk hidden" src="/audio/goose_honk_b_03.wav"></audio>
+    <audio class="audio-honk hidden" src="/audio/goose_honk_b_05.wav"></audio>
+    <audio class="audio-honk hidden" src="/audio/goose_honk_b_06.wav"></audio>
+    <audio class="audio-quack hidden" src="/audio/quack_5.mp3"></audio>
+    <main
+      class="flex h-full grow flex-col items-center justify-center gap-4 overflow-hidden pb-10 md:gap-6 md:pb-20 lg:gap-8"
+    >
+      <button
+        id="big-goose"
+        class="transform transition-transform motion-reduce:transition-none motion-reduce:focus-within:transform-none motion-reduce:hover:transform-none"
+        aria-label="Goose"
+      >
+        <img
+          alt="Click to play sound"
+          src="/goose.png"
+          decoding="async"
+          width="256"
+          height="256"
+        />
+      </button>
+      <noscript>
+        <p class="max-w-7xl">
+          This site requires Javascript to run. Alternatively, just enjoy the
+          image on its own.
+        </p>
+      </noscript>
+    </main>
+    <footer
+      class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 self-end py-2 px-4 text-sm sm:flex-row"
+    >
+      <div class="text-sm">
+        Copyright © 2023
+        <a
+          rel="external"
+          class="umami--click--sthom custom-link"
+          href="https://sthom.kiwi"
+          >Stuart Thomson</a
+        >
+      </div>
+      <button
+        id="footer-goose"
+        class="relative h-12"
+        aria-label="Goose (but in the footer this time)"
+      >
+        <img alt="" src="/goose.png" decoding="async" width="48" height="48" />
+      </button>
+    </footer>
+    <script type="module" src="/src/main.ts" async></script>
   </body>
 </html>
