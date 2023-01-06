@@ -12,12 +12,6 @@ function playSound() {
   currentIndex = (currentIndex + 1) % HONKS.length;
 }
 
-function addInbetweenStyles() {
-  BIG_GOOSE.style.setProperty("--tw-scale-x", "0.98");
-  BIG_GOOSE.style.setProperty("--tw-scale-y", "0.98");
-  BIG_GOOSE.style.setProperty("--tw-rotate", "0");
-}
-
 function addActiveStyles() {
   BIG_GOOSE.style.setProperty("--tw-scale-x", "1.1");
   BIG_GOOSE.style.setProperty("--tw-scale-y", "1.1");
@@ -46,19 +40,20 @@ function queueAnim() {
   handle = setTimeout(() => removeActiveStyles(), 400);
 }
 
-function onClick() {
+function onMouseDown() {
   playSound();
   queueAnim();
 }
 
-function onMouseDown() {
-  addInbetweenStyles();
+function onKey(event: KeyboardEvent) {
+  if (event.key === " " || event.key === "Enter") {
+    onMouseDown();
+  }
 }
 
-function onKey() {}
-
 export function init() {
-  BIG_GOOSE.addEventListener("click", onClick);
+  // BIG_GOOSE.addEventListener("click", onClick);
   BIG_GOOSE.addEventListener("mousedown", onMouseDown);
   BIG_GOOSE.addEventListener("touchstart", onMouseDown);
+  BIG_GOOSE.addEventListener("keydown", onKey);
 }
