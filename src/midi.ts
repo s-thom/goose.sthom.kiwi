@@ -13,6 +13,10 @@ export interface MusicData {
 
 const KNOWN_FILES: MusicMeta[] = [
   { id: "popcorn", name: "Popcorn", emoji: "🍿" },
+  { id: "gladiators", name: "Entry of the Gladiators", emoji: "🤡" },
+  { id: "blue-danube", name: "Blue Danube", emoji: "🟦🏞" },
+  { id: "sandstorm", name: "Sandstorm", emoji: "🏜⛈" },
+  { id: "all-star", name: "All Star", emoji: "🌠🌟" },
 ];
 
 const CACHE: { [key: string]: number[] } = {};
