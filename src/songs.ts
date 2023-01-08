@@ -10,6 +10,7 @@ export interface Song {
 const songs: Pick<Song, "id" | "name" | "emoji">[] = [
   { id: "popcorn", name: "Popcorn", emoji: "🍿" },
   { id: "blue-danube", name: "Blue Danube", emoji: "🟦🏞" },
+  { id: "chicken", name: "Chicken Dance", emoji: "🐔💃" },
   { id: "gladiators", name: "Entry of the Gladiators", emoji: "🤡" },
   { id: "sandstorm", name: "Sandstorm", emoji: "🏜⛈" },
   { id: "all-star", name: "All Star", emoji: "🌠🌟" },
