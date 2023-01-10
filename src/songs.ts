@@ -7,7 +7,9 @@ export interface Song {
   notes: number[];
 }
 
-const songs: Pick<Song, "id" | "name" | "emoji">[] = [
+export type SongMeta = Pick<Song, "id" | "name" | "emoji">;
+
+const songs: SongMeta[] = [
   { id: "cantina", name: "Cantina Band (Star Wars)", emoji: "🎷👽" },
   { id: "chicken", name: "Chicken Dance", emoji: "🐔💃" },
   { id: "blue-danube", name: "Blue Danube", emoji: "🟦🏞" },
@@ -51,11 +53,31 @@ export class SongLoader {
     const song = songs[this.currentSongIndex];
     const notes = await this.getNotes(song.id);
 
+    if (typeof umami !== "undefined") {
+      umami.trackEvent("change-song", { type: "change-song", songId: song.id });
+    }
+
     return {
       id: song.id,
       name: song.name,
       emoji: song.emoji,
       notes,
     };
+  }
+
+  public async getSongById(id: string) {
+    const index = songs.findIndex((song) => song.id === id);
+    if (index === -1) {
+      throw new Error(`No song with ID ${id}`);
+    }
+
+    // Re-use the getNext() method because I'm lazy.
+    this.currentSongIndex = index - 1;
+    return this.getNext();
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  public getSongList() {
+    return songs;
   }
 }

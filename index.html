@@ -25,12 +25,9 @@
     <audio class="audio-quack hidden" src="/audio/quack_5.mp3"></audio>
     <main
       class="flex h-full grow flex-col items-center justify-center gap-4 overflow-hidden pb-10 md:gap-6 md:pb-20 lg:gap-8"
+      id="root"
     >
-      <button
-        id="big-goose"
-        class="transform transition-transform hover:scale-[98deg] motion-reduce:transition-none motion-reduce:focus-within:transform-none motion-reduce:hover:transform-none"
-        aria-label="Goose"
-      >
+      <noscript>
         <img
           alt="Click to play sound"
           src="/goose.png"
@@ -38,15 +35,6 @@
           width="256"
           height="256"
         />
-      </button>
-      <p class="text-center">
-        <span>Click the goose to play music.</span>
-        <br />
-        <span id="big-goose-label"></span>
-      </p>
-
-      <button class="mr-4" id="skip">Play something else ⏭</button>
-      <noscript>
         <p class="max-w-7xl">
           This site requires Javascript to run. Alternatively, just enjoy the
           image on its own.
@@ -86,6 +74,6 @@
         </a>
       </div>
     </footer>
-    <script type="module" src="/src/main.ts" async></script>
+    <script type="module" src="/src/main.tsx" async></script>
   </body>
 </html>
