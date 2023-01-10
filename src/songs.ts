@@ -11,8 +11,13 @@ const songs: Pick<Song, "id" | "name" | "emoji">[] = [
   { id: "popcorn", name: "Popcorn", emoji: "🍿" },
   { id: "blue-danube", name: "Blue Danube", emoji: "🟦🏞" },
   { id: "chicken", name: "Chicken Dance", emoji: "🐔💃" },
+  { id: "cantina", name: "Cantina Band (Star Wars)", emoji: "🎷👽" },
   { id: "gladiators", name: "Entry of the Gladiators", emoji: "🤡" },
+  { id: "still-alive", name: "Still Alive (Portal)", emoji: "🍰🤖" },
+  { id: "panther", name: "The Pink Panther", emoji: "🎀🐆" },
+  { id: "benny-hill", name: "Benny Hill", emoji: "🏃‍♂️🌄" },
   { id: "sandstorm", name: "Sandstorm", emoji: "🏜⛈" },
+  { id: "nevergonna", name: "Never gonna give you up", emoji: "🎙🕺" },
   { id: "all-star", name: "All Star", emoji: "🌠🌟" },
 ];
 
