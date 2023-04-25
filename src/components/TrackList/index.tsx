@@ -53,6 +53,8 @@ export function TrackList({ currentSong, songs, setSong }: TrackListProps) {
                     <button
                       className="w-full rounded bg-slate-300 p-1 dark:bg-slate-800"
                       aria-label={`Play ${song.name}`}
+                      data-umami-event="select-song"
+                      data-umami-event-songid={song.id}
                       onClick={setSong ? () => setSong(song.id) : undefined}
                     >
                       {song.emoji}

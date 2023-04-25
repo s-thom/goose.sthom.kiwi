@@ -53,10 +53,6 @@ export class SongLoader {
     const song = songs[this.currentSongIndex];
     const notes = await this.getNotes(song.id);
 
-    if (typeof umami !== "undefined") {
-      umami.trackEvent("change-song", { type: "change-song", songId: song.id });
-    }
-
     return {
       id: song.id,
       name: song.name,
